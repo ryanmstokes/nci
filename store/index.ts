@@ -1,35 +1,37 @@
+/** Import Typed Vuex helpers */
 import {
   /** getStoreType, */
   getAccessorType,
   mutationTree,
   actionTree,
+  useAccessor,
 } from 'nuxt-typed-vuex'
 
+import Vue from 'vue'
+/** Import the Config Store Module */
+import config from '@/store/config/index';
 
+/** Import the Store Typescript interface */
+import { Store } from '@/nci/app/interfaces';
+
+/** Store State */
 export const state = () => ({
-  name: 'Landing Zone' as string,
-  logo: "logo.svg" as string
+  name: 'Landing Zone Template' as string,
 })
 
-type RootState = ReturnType<typeof state>
-
+/** Store Getters */
 export const getters = {
-  name: (state: RootState) => state.name,
-  logo: (state: RootState) => state.logo
+  name: (state: Store) => state.name,
 }
 
+/** Store Mutations */
 export const mutations = mutationTree(state, {
-  setEmail(state, newValue: string) {
+  setName(state, newValue: string) {
     state.name = newValue
-  },
-  setLogo(state, newValue: string) {
-    state.logo = newValue
-  },
-  initialiseStore() {
-    console.log('initialised')
   },
 })
 
+/** Store Actions */
 export const actions = actionTree(
   { state, getters, mutations },
   {
@@ -37,12 +39,13 @@ export const actions = actionTree(
   }
 )
 
+/** export the typed wrapper around module */
 export const accessorType = getAccessorType({
   actions,
   getters,
   mutations,
   state,
-  /** modules: {
-     ...
-  }, */
+  modules: {
+    config: config
+  },
 })
