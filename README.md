@@ -1,7 +1,8 @@
+* This project is under construction - do not use for production!
+
 <p align="center">  
   <img src="./readme-assets/technology-logos.jpg" />
 </p>
-
 
 
 # Content
@@ -100,7 +101,7 @@ And now that both the application and styleguide are running lets check to see t
 $ yarn test
 ```
 
-If everything is good you should see all of the sutes and tests for the application pass.
+If everything is good you should see all of the suites and tests for the application pass.
 
 Ok let's dive in to how the application is structured and how to define the data of an application and its components.
 
@@ -211,33 +212,56 @@ If you take a look into the html of the web page you will see that the config ge
 </main>
 ```
 
+Components 
+
+You will see in the above object definition there is a Components object which contains a list of components. 
+
 Looking at the title component object closer you will see that it has a number of different properties:
 
 ```
-title: {   type: "title", /** The Vue component */   value: "Hello World", /** The Value of the title */   tag: "h1", /** The HTML tag to be used for the title <h1/>. */   size: "xl3", /** Value mapped to Tailwind Classes */   color: "primary", /** Value mapped to Tailwind Classes */   styles: "title", /** Additional Classes (e.g. non Tailwind..) */},
+title: {   
+  type: "title", /** The Vue component */   
+  value: "Hello World", /** The Value of the title */   
+  tag: "h1", /** The HTML tag to be used for the title <h1/>. */   
+  size: "xl3", /** Value mapped to Tailwind Classes */   
+  color: "primary", /** Value mapped to Tailwind Classes */   
+  styles: "title", /** Additional Classes (e.g. non Tailwind..) */
+},
 ```
+
+Lets break down what each property in the title component means:
 
 - **"type"** property tells NCI which Nuxt component the object definiition is for. There are a number of base components such as "group", "image", "anchor" etc which you can use to compose complex sections and pages ( For a full list of components see the [Components Api](#Components) section.)
 
 - **"value"** property is the string we are passing to the title component.
 
-- **"tag"** property is the actual html tag used by the component to render the title. This could be a <title> or <h5> tag for example or even a <p>.
+- **"tag"** property is the actual html tag used by the component to render the title. This could be a <title>,<h5> tag for example or even a <p>.
 
 - **"size"** a value which is mapped to a fluid font size (in this case **"text-xl3"**) within the theme system. We will go into the theme system [more]() shortly but for now you can take a look quickly at **/nci/theme/default.ts** and see that there is a **"font:"** config defintiion object where font sizes for the theme are configured.
 
 - **"color"** a value which is mapped to a theme property (in this case **"text-black-500"**).
 
-Now that you understand the definition open up the storybook styleguide again in your browser (or run **yarn nuxt storybook**) .
+Storybook
 
-Notice how the the styleguide contains the core components but now only has one section which also now says **"Hello World"** and looks just like how you styled it within the application. Every time you add a new section definition to your app, it will be catalogued in the page sidebar item, along with documentation and controls (or knobs) to allow designers to change properties of the corresponding components interactively.
+Now that you understand the schema open up the storybook styleguide again in your browser (or run **yarn nuxt storybook**) .
 
-- a unit test for the title component
+Notice how the styleguide contains the core components but now only has one section which also now says **"Hello World"** and looks just like how you styled it within the application. 
 
-- A Storybook story catologuing the component. 
+A Storybook story is generated for each section definition. Every time you add a new section definition to your app, it will be catalogued in the page sidebar item, along with documentation and controls (or knobs) to allow designers to change properties of the corresponding components interactively.
 
-Components 
+Unit Testing
 
-You will see in the above objet definition there is a Page component definition called "Home". 
+Now run the tests again to see our new data does not break anything:
+
+``` 
+$ yarn test
+```
+
+You will notice that there are less tests run than previously. This is because as well as running tests on the core Vue componenets and nci functions, it generates:
+
+- A unit test for each section definition
+
+As there was much more data previously the application gennerated more tests. This can make us confident that the real data we are using in the app does not break our application.
 
 
 

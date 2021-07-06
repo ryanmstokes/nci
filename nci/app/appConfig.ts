@@ -1,15 +1,11 @@
-/** Import the config file */
-import Config from "../data/demo";
-
-/** Import the Theme file */
-import Theme from "../theme/default-light";
+import nciConfig from "../../nci.config"
 
 /** Import App Config Type */
 import { AppConfig } from '@/nci/app/interfaces'
 
 const appConfig = {
-  config: Config,
-  theme: Theme,
+  config: nciConfig.config,
+  theme: nciConfig.theme,
 } as AppConfig;
 
 export default appConfig;
