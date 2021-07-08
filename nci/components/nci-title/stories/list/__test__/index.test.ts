@@ -29,7 +29,7 @@ describe('nci-title component', () => {
       const item = list[key]
 
       const wrapper = mount(nciTitle, {
-        propsData: item,
+        propsData: item
       })
 
       /** Check the component mounted */

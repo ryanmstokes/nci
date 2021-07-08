@@ -29,7 +29,8 @@ describe('nci-section component', () => {
         test("testing section:" + key2, () => {
 
           let wrapper = mount(nciSection, {
-            propsData: pageSections[key2]
+            propsData: pageSections[key2],
+            stubs: ['nuxt-link']
           })
           /** Check the component mounted */
           expect(wrapper.vm).toBeTruthy();

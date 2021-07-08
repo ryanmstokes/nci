@@ -27,7 +27,8 @@ describe('nci-page component', () => {
       let wrapper = mount(nciPage, {
         propsData: {
           page: pages[key] as Page
-        }
+        },
+        stubs: ['nuxt-link']
       })
 
       /** Check the component mounted */

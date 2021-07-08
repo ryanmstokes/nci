@@ -24,3 +24,10 @@ export const clampGenerator = (minWidth: number, maxWidth: number, clampSizes: s
   })
   return clamps;
 }
+
+/*
+return {
+  xs: "clamp(blah)",
+  sm: "clamp(blah)"
+}
+*/

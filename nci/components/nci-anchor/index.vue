@@ -32,7 +32,7 @@ const nciAnchor = defineComponent({
     },
   },
   setup: (props) => {
-    let componentType = "NuxtLink";
+    let componentType = "nuxt-link";
     let attrs = {
       to: props.href,
     } as { [name: string]: string };

@@ -21,6 +21,7 @@ it('renders the button in the primary state', () => {
 
       const wrapper = mount(nciAnchor, {
         propsData: item,
+        stubs: ['nuxt-link']
       });
 
       /** Check the component mounted */

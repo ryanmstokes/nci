@@ -9,7 +9,7 @@ import { Button } from '@/nci/app/interfaces';
  */
 describe('nci-anchor component', () => {
 
-  test('Does the component successfully load a button?', () => {
+  test('Successfully loads a button.', () => {
 
     let wrapper = mount(nciAnchor, {
       propsData: {
@@ -19,7 +19,8 @@ describe('nci-anchor component', () => {
         size: "md",
         color: "primary",
         styles: "w-auto bg-gray-200"
-      } as Button
+      } as Button,
+      stubs: ['nuxt-link']
     })
 
     /** Check the component mounted */
