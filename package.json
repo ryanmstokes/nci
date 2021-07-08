@@ -23,7 +23,7 @@
     "vuex-composition-helpers": "^1.0.23"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.15.3",
+    "@nuxt/types": "^2.15.7",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/storybook": "^4.0.1",
     "@nuxtjs/tailwindcss": "^4.2.0",
