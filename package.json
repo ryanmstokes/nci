@@ -13,7 +13,7 @@
     "@nuxt/typescript-runtime": "^2.1.0",
     "@nuxtjs/composition-api": "^0.22.4",
     "@storybook/addon-knobs": "^6.2.9",
-    "@types/jest": "^26.0.22",
+    "@types/jest": "^26.0.24",
     "core-js": "^3",
     "install": "^0.13.0",
     "jest-transform-stub": "^2.0.0",
