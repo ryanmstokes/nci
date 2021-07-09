@@ -8,6 +8,7 @@ export default {
   purge: {
     enabled: false
   },
+  jit: false,
   darkMode: false, // or 'media' or 'class'
   important: true,
   theme: {
