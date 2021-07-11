@@ -36,6 +36,7 @@ const data = {
   color: "primary",
   styles: 'self-start'
 }
+
 const StoryList = storyList(data, Theme.anchor, 'size', 'nci-anchor', "flex flex-col flex-start justify-left items-left text-left")
 /** Associate the $args to the template instance */
 Sizes.args = StoryList.list;

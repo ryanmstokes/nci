@@ -41,7 +41,7 @@ const config: NuxtConfig = {
       '@storybook/addon-controls',
       '@storybook/addon-notes',
     ],
-    stories: ['@/nci/components/**/stories/**/*.stories.@(ts)'],
+    stories: ['@/nci/components/**/*/index.stories.@(ts)'],
     plugins: ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
   },
   tailwindcss: {
@@ -78,7 +78,6 @@ const config: NuxtConfig = {
       pages: false,
       commons: false
     },
-    /** doesnt work?: https://stackoverflow.com/questions/67525675/disable-nuxt-code-splitting-how-to-pack-everything-into-a-single-file */
     html: {
       minify: {
         collapseBooleanAttributes: true,
@@ -95,13 +94,6 @@ const config: NuxtConfig = {
         removeEmptyElements: true
       }
     }
-    /*extend(config, { isDev, isClient }) {
-      if (!isDev && config.output) {
-        // relative links, please.
-        config.output.publicPath = __dirname;
-      }
-      return config;
-    }*/
   },
   transpile: ['vuex-composition-helpers'], /** /@vue[\\/]composition-api/ */
 }

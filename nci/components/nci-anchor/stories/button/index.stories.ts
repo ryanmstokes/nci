@@ -32,7 +32,7 @@ export default StoryMenuItem;
  */
 const Templateb: Story<Button> = (args: Button) => ({
   components: { nciAnchor },
-  props: generateProps(injectObject(Theme.anchor, args)),
+  props: generateProps(args),
   template: `<nci-anchor v-bind="$props"/>`
 });
 
@@ -44,8 +44,8 @@ const datab = {
   styles: ""
 }
 /** Bind and export the Story */
-export const button: Story<Button> = Templateb.bind({});
-button.args = datab
+export const button: Story<Button> = Templateb.bind({})
+button.args = injectObject(Theme.anchor, datab)
 button.decorators = [() => ({ template: '<div class="mt-10"><story /></div>' })];
-
+//console.log(injectObject(Theme.anchor, datab))
 export { Sizes } from '@/nci/components/nci-anchor/stories/list/index.stories'
