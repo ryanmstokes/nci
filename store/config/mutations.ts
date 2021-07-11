@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import state from "./state"
-import { mutationTree } from 'nuxt-typed-vuex'
+import { mutationTree } from 'typed-vuex'
 import { Config, Pages } from "@/nci/app/interfaces";
 
 /** Store mutations

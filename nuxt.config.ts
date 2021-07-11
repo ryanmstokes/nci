@@ -54,7 +54,7 @@ const config: NuxtConfig = {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     'nuxt-typed-vuex',
-    '@nuxtjs/composition-api',
+    '@nuxtjs/composition-api/module',
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss

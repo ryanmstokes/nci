@@ -1,4 +1,4 @@
-import { getterTree } from 'nuxt-typed-vuex'
+import { getterTree } from 'typed-vuex'
 import { Config, Image, Title, Button } from "@/nci/app/interfaces";
 import state from "./state"
 

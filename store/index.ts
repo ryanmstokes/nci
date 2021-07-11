@@ -4,8 +4,7 @@ import {
   getAccessorType,
   mutationTree,
   actionTree,
-  useAccessor,
-} from 'nuxt-typed-vuex'
+} from 'typed-vuex'
 
 import Vue from 'vue'
 /** Import the Config Store Module */

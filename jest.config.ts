@@ -3,7 +3,7 @@ export default {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
     '^vue$': 'vue/dist/vue.common.js',
-    '@nuxtjs/composition-api': '@nuxtjs/composition-api/lib/entrypoint.js',
+    '@nuxtjs/composition-api/module': '@nuxtjs/composition-api/module/lib/entrypoint.js',
     "^.+.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
   },
   moduleFileExtensions: [

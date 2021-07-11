@@ -1,4 +1,4 @@
-import { actionTree } from 'nuxt-typed-vuex'
+import { actionTree } from 'typed-vuex'
 
 /** Import the Config Typescript Interface */
 import { AppConfig } from "@/nci/app/interfaces";
