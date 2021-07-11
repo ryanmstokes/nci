@@ -41,8 +41,7 @@ const config: NuxtConfig = {
       '@storybook/addon-controls',
       '@storybook/addon-notes',
     ],
-    stories: ['@/nci/components/**/*/index.stories.@(ts)'],
-    plugins: ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+    stories: ['@/nci/components/**/*/index.stories.@(ts)']
   },
   tailwindcss: {
     cssPath: '@/assets/css/tailwind.css',

@@ -32,5 +32,6 @@ export default {
     '<rootDir>/pages/**/*.{js,vue,ts}',
     '<rootDir>/store/**/*.{js,vue,ts}',
     "!**/node_modules/**"
-  ]
+  ],
+  testEnvironment: "jsdom"
 }
