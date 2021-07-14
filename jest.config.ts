@@ -26,12 +26,13 @@ export default {
   ],
   collectCoverage: true,
   collectCoverageFrom: [
-    '<rootDir>/nci/components/**/*.{js,vue,ts}',
+    '<rootDir>/nci/app/components/**/*.{js,vue,ts}',
     '<rootDir>/nci/storybook/**/*.{js,vue,ts}',
     '<rootDir>/nci/app/factories/**/*.{js,vue,ts}',
     '<rootDir>/pages/**/*.{js,vue,ts}',
     '<rootDir>/store/**/*.{js,vue,ts}',
     "!**/node_modules/**"
   ],
-  testEnvironment: "jsdom"
+  testEnvironment: "jsdom",
+  setupFilesAfterEnv: ['./nci/app/testing/registerComponents.ts']
 }

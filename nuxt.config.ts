@@ -41,14 +41,14 @@ const config: NuxtConfig = {
       '@storybook/addon-controls',
       '@storybook/addon-notes',
     ],
-    stories: ['@/nci/components/**/*/index.stories.@(ts)']
+    stories: ['@/nci/app/components/**/*/index.stories.@(ts)']
   },
   tailwindcss: {
     cssPath: '@/assets/css/tailwind.css',
     configPath: '@/tailwind.config.ts',
   },
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: ['@/nci/components'/*'@/components'*/],
+  components: ['@/nci/app/components'/*'@/components'*/],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [

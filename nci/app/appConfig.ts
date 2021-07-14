@@ -1,4 +1,4 @@
-import nciConfig from "../../nci.config"
+import { nciConfig } from "../../nci.config"
 
 /** Import App Config Type */
 import { AppConfig } from '@/nci/app/interfaces'

@@ -13,7 +13,7 @@ import Vue from 'vue';
 function registerComponents(): void {
 
   // Automatically register all components
-  const fileComponents = glob.sync(path.join(__dirname, '../../components/**/index.vue'));
+  const fileComponents = glob.sync(path.join(__dirname, '../components/**/index.vue'));
 
   // Iterate through components directory and add each file object to an array
   for (const file of fileComponents) {
