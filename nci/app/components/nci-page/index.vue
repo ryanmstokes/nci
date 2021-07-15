@@ -2,7 +2,11 @@
 /** Import utilities from Vue3 Composition API */
 import { defineComponent, h } from "@nuxtjs/composition-api";
 
-import { Page, Sections, Section } from "@/nci/app/interfaces";
+import buildSections from "@/nci/app/factories/sections";
+
+import nav from "@/nci/app/factories/nav";
+
+//import buildPage from '@/nci/app/factories/page'
 
 /** NCI-PAGE */
 /**
@@ -18,24 +22,17 @@ export default defineComponent({
       type: Object,
       required: true,
     },
+    nav: {
+      type: Object,
+      required: true,
+    },
   },
   setup(props) {
-    const page = (page: Page) => {
-      return h("main", { class: page.styles }, [sections(page.sections)]);
-    };
-    const sections = (sections: Sections) => {
-      let sectionsArray = [];
-      for (const key in sections) {
-        sectionsArray.push(section(sections[key]));
-      }
-      return sectionsArray;
-    };
-    const section = (section: Section) => {
-      return h("nci-section", {
-        props: { ...section },
-      });
-    };
-    return () => page(props.page as Page);
+    return () =>
+      h("div", { class: "page" }, [
+        nav(props.nav.routes, props.nav.design.styles),
+        buildSections(props.page.sections),
+      ]);
   },
 });
 </script>

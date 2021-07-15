@@ -1,6 +1,7 @@
 import injectObject from '@/nci/app/injectors/inject-object'
+import { ThemeObject, SimpleObject } from '@/nci/app/interfaces'
 
-export const storyList = (data: any, themeObject: any, property: any, component: string, decorator: string) => {
+export const storyList = (data: SimpleObject, themeObject: ThemeObject, property: string, component: string, decorator: string) => {
 
   let list: { [name: string]: { [name: string]: string } } = {};
 

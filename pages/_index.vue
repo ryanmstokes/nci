@@ -12,7 +12,7 @@ import {
 /** Import app config file */
 import appConfig from "@/nci/app/appConfig";
 
-/** INDEX PAGE COOMPONENT */
+/** INDEX PAGE COMPONENT */
 /**
  * Component that generates the applications pages.
  * @function Index
@@ -28,17 +28,22 @@ export default defineComponent({
 
     //** Get Route */
     const route = useRoute().value.params.index;
-
-    //** Construct Page */
-    const buildPage = (page: any) => {
-      return h("nci-page", { props: { page: page } });
-    };
     const pageData = computed(() => {
       return typedStore.config.pages![route];
     });
 
+    let routes = useRouter().options.routes;
+
+    const navData = computed(() => {
+      return {
+        design: typedStore.config.nav,
+        routes: routes,
+      };
+    });
+
     //** Return template Data */
-    return () => buildPage(pageData.value);
+    return () =>
+      h("nci-page", { props: { page: pageData.value, nav: navData.value } });
   },
 });
 </script>

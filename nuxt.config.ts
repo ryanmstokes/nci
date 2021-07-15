@@ -31,7 +31,12 @@ const config: NuxtConfig = {
           component: resolve(__dirname, 'pages/_index.vue')
         })
       })
-    }
+      routes.push({
+        name: "blah",
+        path: '/',
+        component: resolve(__dirname, 'pages/_index.vue')
+      })
+    },
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [

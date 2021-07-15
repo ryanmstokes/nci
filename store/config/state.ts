@@ -10,6 +10,7 @@ import { Config } from "@/nci/app/interfaces";
 const state = (): Config => ({
   name: undefined,
   pages: undefined,
+  nav: undefined,
   theme: undefined
 })
 

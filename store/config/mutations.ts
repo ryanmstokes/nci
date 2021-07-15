@@ -24,6 +24,13 @@ const mutations = mutationTree(state, {
     Vue.set<Pages>(state, 'pages', newValue)
   },
 
+  /** setNav
+   * @function setConfig
+   * Commit the Config object to the store */
+  setNav(state, newValue: any) {
+    Vue.set<any>(state, 'nav', newValue)
+  },
+
   /** setStyleMapper
    * @function setStyleMapper
    * Commit the StyleMapper object to the store

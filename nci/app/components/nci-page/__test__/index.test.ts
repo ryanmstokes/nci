@@ -21,12 +21,26 @@ describe('nci-page component', () => {
 
 
   const pages = Config.pages as Pages;
+  const nav = {
+    design: {
+      styles: "nav",
+      childStyles: "blah",
+      size: "sm",
+      color: "primary",
+    },
+    routes: [{
+      path: "/about",
+      name: "route"
+    }]
+  }
+
   Object.keys(pages).forEach(key => {
     test('Testing page:' + key, () => {
 
       let wrapper = mount(nciPage, {
         propsData: {
-          page: pages[key] as Page
+          page: pages[key] as Page,
+          nav: nav,
         },
         stubs: ['nuxt-link']
       })

@@ -8,6 +8,7 @@ import getters from './getters'
 import mutations from './mutations'
 
 import recurseInject from '@/nci/app/injectors/recurseInject'
+import injectObject from '@/nci/app/injectors/inject-object'
 
 /** Store actions
  * @function actions
@@ -27,6 +28,8 @@ const actions = actionTree(
 
       //** Commit style injected pages to the store */
       commit('setConfig', recurseInject(appConfig.config.pages, appConfig.theme));
+
+      commit('setNav', injectObject(appConfig.theme.anchor, appConfig.config.nav));
 
       /** Commit the theme object to the store */
       commit('setTheme', appConfig.theme);

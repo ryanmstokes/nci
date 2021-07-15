@@ -3,6 +3,32 @@ interface SimpleObject {
   [key: string]: string
 }
 
+/** Routing interfaces */
+
+/**
+ * Route interface
+ *
+ * @interface Route
+ * @member {object} component Component associated to route
+ * @member {string} name Name of the route
+ * @member {string} Path The URL/Path of the Route
+ */
+interface Route {
+  component: object;
+  name: string;
+  path: string;
+}
+
+/**
+ * Routes interface
+ *
+ * @type Routes
+ * @member {object} component Component associated to route
+ * @member {string} name Name of the route
+ * @member {string} Path The URL/Path of the Route
+ */
+type Routes = Array<Route>
+
 /* COMPONENT INTERFACES */
 
 /**
@@ -111,9 +137,17 @@ interface Group {
   components: Components
 }
 
-interface Components {
-  [name: string]: Title | Image | Button | Group
+interface Nav {
+  type: string,
+  size: string
+  color: string,
+  styles: string
 }
+
+interface Components {
+  [name: string]: Title | Image | Button | Group | Nav
+}
+
 
 /**
  * Section Interface
@@ -205,6 +239,7 @@ interface Store {
 interface Config {
   name?: string,
   pages?: Pages,
+  nav?: any,
   theme?: Theme
 }
 
@@ -221,12 +256,24 @@ interface AppConfig {
   theme?: Theme
 }
 
+
+/** THEME INTERFACES */
+
+interface ThemeObject {
+  [name: string]: {
+    [name: string]: string
+  }
+}
+
 export {
   SimpleObject,
   DefaultImgOptions,
   Store,
   AppConfig,
   Config,
+  Route,
+  Routes,
+  Nav,
   Pages,
   Page,
   Group,
@@ -238,5 +285,6 @@ export {
   Section,
   Button,
   ButtonCompiled,
-  Theme
+  Theme,
+  ThemeObject
 };

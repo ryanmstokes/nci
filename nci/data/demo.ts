@@ -3,6 +3,13 @@
  */
 const ConfigFile = {
   name: "LandingZone",
+  /** Component */
+  nav: {
+    type: "anchor",
+    size: "sm",
+    color: "nav",
+    styles: ""
+  },
   pages: {
     /** Page */
     home: {
@@ -16,7 +23,6 @@ const ConfigFile = {
           background: "primary",
           /** Components */
           components: {
-            /** Component */
             banner: {
               type: "image",
               title: "Landing Zone",
