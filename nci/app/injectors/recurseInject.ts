@@ -1,5 +1,5 @@
 import { Pages } from '@/nci/app/interfaces'
-import injectObject from '@/nci/app/injectors/inject-object'
+import injectObject from '@/nci/app/injectors/injectObject'
 /** recurseInject
  * A function that takes 2 objects and searches for a key in obj1 and finds the
  * corresponding key in obj2 and injects obj2 value into obj1

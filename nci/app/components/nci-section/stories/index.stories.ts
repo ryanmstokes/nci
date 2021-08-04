@@ -2,8 +2,6 @@
 /** Import Storybook resources */
 import { storiesOf } from '@storybook/vue';
 
-import { Story } from '@storybook/vue';
-
 /** Import tailwind map config for defaults (e.g. image sizes) */
 import Theme from '@/nci/theme/default-light';
 

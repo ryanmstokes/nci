@@ -8,7 +8,7 @@ import getters from './getters'
 import mutations from './mutations'
 
 import recurseInject from '@/nci/app/injectors/recurseInject'
-import injectObject from '@/nci/app/injectors/inject-object'
+import injectObject from '@/nci/app/injectors/injectObject'
 
 /** Store actions
  * @function actions

@@ -19,7 +19,7 @@ import appConfig from "@/nci/app/appConfig";
  */
 export default defineComponent({
   name: "Index",
-  setup() {
+  setup(props) {
     /** Set up store */
     const typedStore = useStore().app.$accessor;
     if (process.server) {
@@ -28,6 +28,7 @@ export default defineComponent({
 
     //** Get Route */
     const route = useRoute().value.params.index;
+
     const pageData = computed(() => {
       return typedStore.config.pages![route];
     });

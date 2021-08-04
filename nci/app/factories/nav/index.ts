@@ -4,7 +4,7 @@ import {
 
 import { Routes } from '@/nci/app/interfaces'
 
-const nav = (routes: Routes, styles: string) => {
+const nav = (routes: Routes, currentRoute: string, styles: string) => {
   return h("nci-nav", {
     props: {
       routes: routes,

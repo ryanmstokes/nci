@@ -7,7 +7,7 @@ import { Route, ButtonCompiled } from "@/nci/app/interfaces/";
 /** NCI-SECTION COMPONENT */
 /**
  * Setup the component
- * @function nciNNav
+ * @function nciNav
  * @param {string} name Name of the component.
  * @param {object} props Props that are passed to the component.
  * @param {function} setup Setup data and methods and return to component.
@@ -28,6 +28,10 @@ const nciNav = defineComponent({
       type: Array as PropType<Array<Route>>,
       required: true,
     },
+    currentRoute: {
+      type: String as PropType<string>,
+      required: true,
+    },
   },
   setup(props) {
     const createComponent = (component: ButtonCompiled) => {
@@ -36,15 +40,24 @@ const nciNav = defineComponent({
       });
     };
 
+    let active: string;
+
     let navComponentArray = [] as object[];
     props.routes.map((route: Route) => {
-      navComponentArray.push(
-        createComponent({
-          href: route.path,
-          title: route.name,
-          styles: props.childStyles,
-        })
-      );
+      route.path === "/" + props.currentRoute
+        ? (active = "active")
+        : (active = "");
+
+      route.path !== "/:index"
+        ? navComponentArray.push(
+            createComponent({
+              href: route.path,
+              title: route.name,
+              styles: props.childStyles,
+              active: active,
+            })
+          )
+        : null;
     });
 
     return () =>

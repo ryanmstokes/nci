@@ -85,6 +85,7 @@ const Theme = {
       primary: "bg-transparent uppercase rounded border border-primary text-primary hover:bg-gray-300 hover:border-transparent hover:text-white",
       secondary: "bg-transparent uppercase rounded text-green-700 border border-green-500 hover:bg-green-500 hover:border-transparent hover:text-white",
       tertiary: "bg-transparent uppercase rounded text-red-700 border border-red-500 hover:bg-red-500 hover:border-transparent hover:text-white",
+      nav: "text-primary hover:text-secondary"
     },
   }
 }

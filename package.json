@@ -21,6 +21,7 @@
     "npm": "^7.14.0",
     "nuxt": "^2.15.3",
     "nuxt-typed-vuex": "^0.2.0",
+    "vue-router-mock": "^0.0.3",
     "vuex-composition-helpers": "^1.0.23"
   },
   "devDependencies": {

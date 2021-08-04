@@ -26,33 +26,31 @@ const nciAnchor = defineComponent({
       type: String as PropType<string>,
       required: false,
     },
-    size: {
+    active: {
       type: String as PropType<string>,
       required: false,
+      default: "",
     },
   },
   setup: (props) => {
-    let componentType = "nuxt-link";
-    let attrs = {
-      to: props.href,
-    } as { [name: string]: string };
-    let pointer = "to";
+    let componentType: string = "";
+    let pointer: string = "";
+    let styles: string = "";
+    props.href.includes("http")
+      ? ((componentType = "a"), (pointer = "href"))
+      : ((componentType = "nuxt-link"), (pointer = "to"));
 
-    if (props.href.includes("http")) {
-      componentType = "a";
-      attrs = {
-        href: props.href,
-      };
-      pointer = "href";
-    }
-
+    props.active
+      ? (styles = props.styles! + props.active)
+      : (styles = props.styles!);
+    console.log("componentType:", componentType, pointer, "styles:", styles);
     return () =>
       h(
         componentType,
         {
           attrs: {
             [pointer]: props.href,
-            class: props.styles,
+            class: styles,
           },
         },
         props.title

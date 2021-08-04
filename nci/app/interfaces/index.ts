@@ -121,7 +121,8 @@ interface Button {
 interface ButtonCompiled {
   href: string
   title: string,
-  styles: string
+  styles: string,
+  active?: string
 }
 
 /**

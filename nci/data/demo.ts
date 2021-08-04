@@ -54,6 +54,22 @@ const ConfigFile = {
               size: "sm",
               color: "primary",
               styles: "button"
+            },
+            buttonInfo: {
+              type: "anchor",
+              href: "/about",
+              title: "Contact Us",
+              size: "sm",
+              color: "primary",
+              styles: "button"
+            },
+            buttonInfoB: {
+              type: "anchor",
+              href: "/about",
+              title: "Contact Us",
+              size: "sm",
+              color: "primary",
+              styles: "button"
             }
           }
         }

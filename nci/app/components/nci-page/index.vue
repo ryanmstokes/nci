@@ -6,7 +6,7 @@ import buildSections from "@/nci/app/factories/sections";
 
 import nav from "@/nci/app/factories/nav";
 
-//import buildPage from '@/nci/app/factories/page'
+import { useRoute } from "@nuxtjs/composition-api";
 
 /** NCI-PAGE */
 /**
@@ -27,10 +27,13 @@ export default defineComponent({
       required: true,
     },
   },
+  methods: {},
   setup(props) {
+    const getCurrentRoute = useRoute().value.params.index;
+
     return () =>
       h("div", { class: "page" }, [
-        nav(props.nav.routes, props.nav.design.styles),
+        nav(props.nav.routes, getCurrentRoute, props.nav.design.styles),
         buildSections(props.page.sections),
       ]);
   },

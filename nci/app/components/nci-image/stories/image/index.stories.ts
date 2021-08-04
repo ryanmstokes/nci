@@ -20,7 +20,7 @@ export default StoryMenuItem;
 /** Require the Placeholder Image to be used in the image component **/
 const imagePath = 'logo.svg';
 
-import injectObject from '@/nci/app/injectors/inject-object'
+import injectObject from '@/nci/app/injectors/injectObject'
 
 /** Create a single component export and corresponding template and args */
 import generateProps from '@/nci/storybook/factories/generateProps'

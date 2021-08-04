@@ -25,18 +25,15 @@ const config: NuxtConfig = {
   router: {
     extendRoutes(routes, resolve) {
       Object.keys(ConfigFile.pages).forEach(key => {
+        console.log('key:', key)
         routes.push({
           name: key,
           path: '/' + key,
           component: resolve(__dirname, 'pages/_index.vue')
         })
       })
-      routes.push({
-        name: "blah",
-        path: '/',
-        component: resolve(__dirname, 'pages/_index.vue')
-      })
     },
+
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
