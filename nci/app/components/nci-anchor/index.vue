@@ -33,7 +33,6 @@ const nciAnchor = defineComponent({
     },
   },
   setup: (props) => {
-    console.log("props selected:", props.selected);
     let componentType: string = "";
     let pointer: string = "";
     let styles: string = "";
@@ -44,7 +43,6 @@ const nciAnchor = defineComponent({
     props.selected
       ? (styles = props.styles! + props.selected)
       : (styles = props.styles!);
-    console.log("componentType:", componentType, pointer, "styles:", styles);
     return () =>
       h(
         componentType,

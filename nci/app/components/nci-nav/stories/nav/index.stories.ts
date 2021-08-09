@@ -21,7 +21,6 @@ import config from '@/nci/data/demo'
 const content = recurseInject(config.pages, Theme)
 const props = injectObject(Theme.anchor, config.nav)
 
-console.log('stylees', props.styles)
 /** Construct the sidebar Menu Item */
 const StoryMenuItem = storyItem('Components/Nav', nciNav);
 
@@ -55,7 +54,6 @@ const data = {
   currentRoute: "/home"
 }
 
-console.log('generateprops', generateProps(data), data)
 /** Bind and export the Story */
 export const nav: Story<Nav> = Template.bind({});
 nav.args = data

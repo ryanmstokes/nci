@@ -8,7 +8,7 @@ import { nav } from '@/nci/app/components/nci-nav/stories/nav/index.stories';
 it('renders the button in the primary state', () => {
   const wrapper = mount(nciNav, {
     propsData: nav.args,
-    stubs: ['nuxt-link']
+    stubs: ['nuxt-link', 'nci-anchor']
   });
 
   expect(wrapper).toBeTruthy();

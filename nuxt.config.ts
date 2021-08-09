@@ -25,7 +25,6 @@ const config: NuxtConfig = {
   router: {
     extendRoutes(routes, resolve) {
       Object.keys(ConfigFile.pages).forEach(key => {
-        console.log('key:', key)
         routes.push({
           name: key,
           path: '/' + key,

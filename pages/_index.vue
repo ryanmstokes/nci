@@ -37,9 +37,11 @@ export default defineComponent({
 
     const navData = computed(() => {
       return {
-        design: typedStore.config.nav,
         routes: routes,
-        route: route,
+        styles: "nav",
+        childStyles: typedStore.config.nav.styles,
+        currentRoute: route,
+        selected: typedStore.config.nav.selected,
       };
     });
 

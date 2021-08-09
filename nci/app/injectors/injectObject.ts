@@ -28,7 +28,6 @@ const injectObject = (themeObject: ThemeObject, componentObject: any) => { //** 
       }
     }
   }
-  console.log('componentObject', componentObject)
   return componentObject
 }
 

@@ -30,18 +30,20 @@ describe('nci-page component', () => {
     test('Testing page:' + key, () => {
 
       const nav = {
-        design: {
-          styles: "nav",
-          childStyles: "blah",
-          size: "sm",
-          color: "primary",
-        },
         routes: [{
+          path: "/home",
+          name: "home"
+        },
+        {
           path: "/about",
-          name: "route"
+          name: "about"
         }],
-        route: key
+        styles: "nav",
+        childStyles: "blah",
+        currentRoute: key
       }
+
+
       let wrapper = shallowMount(nciPage, {
         propsData: {
           page: pages[key] as Page,

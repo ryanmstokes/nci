@@ -24,20 +24,13 @@ export default defineComponent({
     },
   },
   setup(props) {
-    console.log("nci-page component loaded");
     /** Render navigation */
-    const nav = h("nci-nav", {
-      props: {
-        routes: props.nav.routes,
-        styles: "nav",
-        childStyles: props.nav.design.styles,
-        currentRoute: props.nav.route,
-        selected: props.nav.design.selected,
-      },
+    const navigation = h("nci-nav", {
+      props: props.nav,
     });
     /** Render page sections */
     const sections = buildSections(props.page.sections);
-    return () => h("div", { class: "page" }, [nav, sections]);
+    return () => h("div", { class: "page" }, [navigation, sections]);
   },
 });
 </script>
