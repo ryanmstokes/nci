@@ -32,6 +32,11 @@ const nciNav = defineComponent({
       type: String as PropType<string>,
       required: true,
     },
+    selected: {
+      /** Rename this to selectedClass */
+      type: String as PropType<string>,
+      required: false,
+    },
   },
   setup(props) {
     const createComponent = (component: ButtonCompiled) => {
@@ -40,13 +45,13 @@ const nciNav = defineComponent({
       });
     };
 
-    let active: string;
+    let active: string | undefined;
 
     let navComponentArray = [] as object[];
     props.routes.map((route: Route) => {
       route.path === "/" + props.currentRoute
-        ? (active = "active")
-        : (active = "");
+        ? (active = props.selected!)
+        : (active = undefined);
 
       route.path !== "/:index"
         ? navComponentArray.push(
@@ -54,7 +59,7 @@ const nciNav = defineComponent({
               href: route.path,
               title: route.name,
               styles: props.childStyles,
-              active: active,
+              selected: active,
             })
           )
         : null;

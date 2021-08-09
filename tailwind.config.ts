@@ -35,6 +35,9 @@ export default {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      // ...
+      borderStyle: ['hover'],
+    },
   }
 }

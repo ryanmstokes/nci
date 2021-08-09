@@ -122,7 +122,7 @@ interface ButtonCompiled {
   href: string
   title: string,
   styles: string,
-  active?: string
+  selected?: string
 }
 
 /**

@@ -14,19 +14,25 @@ const injectObject = (themeObject: ThemeObject, componentObject: any) => { //** 
 
           if (componentObject[key2] == key3) {
             if (componentObject)
+              if (key2 !== 'selected') {
+                /** Inject the value of the theme property into the component */
+                if (!componentObject.styles) { componentObject.styles = '' }
 
-              /** Inject the value of the theme property into the component */
-              if (!componentObject.styles) { componentObject.styles = '' }
-
-            componentObject.styles = themeObject[key2][key3] + " " + componentObject.styles
-            delete componentObject[key2]
+                componentObject.styles = themeObject[key2][key3] + " " + componentObject.styles
+                delete componentObject[key2]
+              } else {
+                componentObject.selected = themeObject[key2][key3]
+              }
           }
         }
       }
     }
   }
-
+  console.log('componentObject', componentObject)
   return componentObject
 }
 
 export default injectObject
+
+
+

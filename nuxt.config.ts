@@ -2,7 +2,7 @@ import { NuxtConfig } from "@nuxt/types";
 import ConfigFile from './nci/data/demo'
 const config: NuxtConfig = {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  target: 'server',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -38,6 +38,11 @@ const config: NuxtConfig = {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
   ],
+  generate: {
+    // choose to suit your project
+    interval: 12000,
+  },
+  env: { NODE_ENV: 'dev' },
   storybook: {
     addons: [
       '@storybook/addon-controls',

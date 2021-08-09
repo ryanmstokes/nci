@@ -52,6 +52,7 @@ const data = {
   styles: "nav",
   childStyles: props.styles,
   routes: routes,
+  currentRoute: "/home"
 }
 
 console.log('generateprops', generateProps(data), data)

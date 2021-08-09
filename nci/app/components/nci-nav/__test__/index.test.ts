@@ -34,7 +34,8 @@ describe('nci-nav test', () => {
       propsData: {
         routes: routes,
         styles: "nav",
-        childStyles: "item"
+        childStyles: "item",
+        currentRoute: "/home"
       },
       stubs: ['nuxt-link']
     })

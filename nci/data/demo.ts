@@ -8,6 +8,7 @@ const ConfigFile = {
     type: "anchor",
     size: "sm",
     color: "nav",
+    selected: "primary",
     styles: ""
   },
   pages: {
@@ -55,22 +56,6 @@ const ConfigFile = {
               color: "primary",
               styles: "button"
             },
-            buttonInfo: {
-              type: "anchor",
-              href: "/about",
-              title: "Contact Us",
-              size: "sm",
-              color: "primary",
-              styles: "button"
-            },
-            buttonInfoB: {
-              type: "anchor",
-              href: "/about",
-              title: "Contact Us",
-              size: "sm",
-              color: "primary",
-              styles: "button"
-            }
           }
         }
       }

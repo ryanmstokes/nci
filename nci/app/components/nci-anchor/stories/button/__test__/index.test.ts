@@ -1,5 +1,3 @@
-// tests/unit/Button.spec.js
-
 import { mount } from '@vue/test-utils';
 
 import nciAnchor from '@/nci/app/components/nci-anchor/index.vue';

@@ -39,6 +39,7 @@ export default defineComponent({
       return {
         design: typedStore.config.nav,
         routes: routes,
+        route: route,
       };
     });
 
@@ -58,5 +59,9 @@ body,
 main,
 .page {
   width: 100%;
+}
+* {
+  border-width: 0;
+  border-style: solid;
 }
 </style>

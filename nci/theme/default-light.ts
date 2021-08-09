@@ -33,7 +33,7 @@ const Theme = {
   },
   section: {
     layout: {
-      container: "m-auto flex flex-col justify-center items-center max-w-screen-lg",
+      container: "m-auto flex flex-col justify-center items-center max-w-screen-lg xx-r",
       centered: "m-auto flex flex-col justify-center items-center text-center sm:w-5/6 md:w-2/3 lg:w-1/2",
       left: "m-auto flex flex-col justify-center items-center text-center sm:w-4/6 md:grid md:grid-rows-1 md:grid-flow-col md:gap-4 md:text-left md:items-left md:justify-left sm:w-5/6 md:w-2/3 lg:w-1/2"
     }
@@ -72,21 +72,25 @@ const Theme = {
   },
   anchor: {
     size: {
-      xs: "text-xs py-2 px-7 my-4",
-      sm: "text-sm py-3 px-8 my-5",
-      md: "text-md py-4 px-9 my-6",
-      lg: "text-lg py-5 px-10 my-7",
-      xl: "text-xl py-6 px-11 my-8",
-      xl2: "text-xl2 py-7 px-12 my-9",
-      xl3: "text-xl3 py-8 px-13 my-10",
-      xl4: "text-xl4 py-9 px-14 my-11",
+      xs: "text-xs py-2 px-7 my-4 mx-1",
+      sm: "text-sm py-3 px-8 my-5 mx-2",
+      md: "text-md py-4 px-9 my-6 mx-3",
+      lg: "text-lg py-5 px-10 my-7 mx-4",
+      xl: "text-xl py-6 px-11 my-8 mx-5",
+      xl2: "text-xl2 py-7 px-12 my-9 mx-6",
+      xl3: "text-xl3 py-8 px-13 my-10 mx-7",
+      xl4: "text-xl4 py-9 px-14 my-11 mx-8",
     },
     color: {
       primary: "bg-transparent uppercase rounded border border-primary text-primary hover:bg-gray-300 hover:border-transparent hover:text-white",
       secondary: "bg-transparent uppercase rounded text-green-700 border border-green-500 hover:bg-green-500 hover:border-transparent hover:text-white",
       tertiary: "bg-transparent uppercase rounded text-red-700 border border-red-500 hover:bg-red-500 hover:border-transparent hover:text-white",
-      nav: "text-primary hover:text-secondary"
+      nav: "text-primary border-b border-double border-transparent hover:border-current cursor-pointer select-none"
     },
+    selected: {
+      primary: "border-0 border-b border-current border-solid",
+      secondary: "background-black text-white-500"
+    }
   }
 }
 

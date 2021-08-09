@@ -26,13 +26,14 @@ const nciAnchor = defineComponent({
       type: String as PropType<string>,
       required: false,
     },
-    active: {
+    selected: {
       type: String as PropType<string>,
       required: false,
       default: "",
     },
   },
   setup: (props) => {
+    console.log("props selected:", props.selected);
     let componentType: string = "";
     let pointer: string = "";
     let styles: string = "";
@@ -40,8 +41,8 @@ const nciAnchor = defineComponent({
       ? ((componentType = "a"), (pointer = "href"))
       : ((componentType = "nuxt-link"), (pointer = "to"));
 
-    props.active
-      ? (styles = props.styles! + props.active)
+    props.selected
+      ? (styles = props.styles! + props.selected)
       : (styles = props.styles!);
     console.log("componentType:", componentType, pointer, "styles:", styles);
     return () =>
@@ -51,6 +52,9 @@ const nciAnchor = defineComponent({
           attrs: {
             [pointer]: props.href,
             class: styles,
+          },
+          on: {
+            mouseOver: () => console.log("over"),
           },
         },
         props.title
