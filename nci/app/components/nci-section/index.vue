@@ -2,7 +2,9 @@
 /** Import utilities from Vue3 Composition API */
 import { defineComponent, PropType, h } from "@nuxtjs/composition-api";
 
+/** Import typescript types and interfaces */
 import { Components, Group, Image, Title, Button } from "@/nci/app/interfaces";
+
 /** NCI-SECTION COMPONENT */
 /**
  * Setup the component
@@ -11,7 +13,6 @@ import { Components, Group, Image, Title, Button } from "@/nci/app/interfaces";
  * @param {object} props Props that are passed to the component.
  * @param {function} setup Setup data and methods and return to component.
  */
-
 const nciSection = defineComponent({
   name: "nci-section",
   inheritAttrs: false,
@@ -26,17 +27,15 @@ const nciSection = defineComponent({
     },
   },
   setup(props) {
-    const createComponent = (component: Image | Title | Button) => {
-      return h("nci-" + component.type, {
-        props: { ...component },
-      });
-    };
-
     const createGroup = (group: Group) => {
       let groupComponents = [];
       for (const key in group.components) {
         groupComponents.push(
-          createComponent(group.components[key] as Image | Title | Button)
+          h("nci-component", {
+            props: {
+              component: group.components[key] as Image | Title | Button,
+            },
+          })
         );
       }
       return h("div", { class: group.styles }, [groupComponents]);
@@ -47,7 +46,11 @@ const nciSection = defineComponent({
       for (const key in components) {
         key !== "group"
           ? componentArray.push(
-              createComponent(components[key] as Image | Title | Button)
+              h("nci-component", {
+                props: {
+                  component: components[key] as Image | Title | Button,
+                },
+              })
             )
           : componentArray.push(createGroup(components[key] as Group));
       }
