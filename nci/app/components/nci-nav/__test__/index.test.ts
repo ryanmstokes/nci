@@ -41,7 +41,7 @@ describe('nci-nav test', () => {
     })
     /** Check the component mounted */
     expect(wrapper.vm).toBeTruthy();
-    expect(wrapper.findAllComponents(nciAnchor).length).toBe(2) /** This is not returnign length!! */
+    expect(wrapper.findAllComponents(nciAnchor).length).toBe(2)
   })
 
 })

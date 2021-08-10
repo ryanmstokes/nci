@@ -27,7 +27,7 @@ interface Route {
  * @member {string} name Name of the route
  * @member {string} Path The URL/Path of the Route
  */
-type Routes = Array<Route>
+type Routes = Route[]
 
 /* COMPONENT INTERFACES */
 

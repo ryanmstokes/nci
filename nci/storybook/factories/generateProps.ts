@@ -1,14 +1,23 @@
-const generateProps = (args: any): { [name: string]: { [type: string]: string | number | object } } => {
+import { propTypes, generatedPropType } from '@/nci/storybook/interfaces/interfaces-storybook'
+
+const generateProps = (args: any): generatedPropType => {
   function capitalizeFirstLetter(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-  let props = {} as { [name: string]: { [type: string]: string | number | object } };
+  let props = {} as generatedPropType;
   for (const key in args) {
+
+    let propType: string = ""
+    args[key] instanceof Array
+      ? propType = "[]"
+      : propType = capitalizeFirstLetter(typeof args[key])
+
     props[key] = {
-      type: eval(capitalizeFirstLetter(typeof args[key])),
+      type: eval(propType),
       default: () => args[key]
     }
   }
+
   return props
 }
 

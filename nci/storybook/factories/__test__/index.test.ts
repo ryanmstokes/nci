@@ -10,6 +10,7 @@ describe('Generating props', () => {
         size: "xl3",
         styles: "title",
       });
+    console.log('generatedprops:', props)
     expect(props).toEqual(
       expect.objectContaining({
         type: {

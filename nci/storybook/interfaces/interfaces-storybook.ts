@@ -67,7 +67,28 @@ interface ButtonList {
   [name: string]: ButtonCompiled
 }
 
-export { StoryItem, Variant, VariantList, ImageList, TitleList, ButtonList }
+/**
+ * propTypes Type
+ *
+ * @interface propType
+ * Joins all possible propTypes within components
+ */
+type propTypes = string | number | object | []
+
+
+/**
+ * generatedPropType Interface
+ *
+ * @interface generatedPropType
+ * @member {string} name An object defining a component prop type.
+ */
+interface generatedPropType {
+  [name: string]: {
+    [type: string]: propTypes
+  }
+}
+
+export { StoryItem, Variant, VariantList, ImageList, TitleList, ButtonList, propTypes, generatedPropType }
 
 
 

@@ -18,7 +18,6 @@ import generateProps from '@/nci/storybook/factories/generateProps'
 
 import config from '@/nci/data/demo'
 
-const content = recurseInject(config.pages, Theme)
 const props = injectObject(Theme.anchor, config.nav)
 
 /** Construct the sidebar Menu Item */
@@ -26,35 +25,29 @@ const StoryMenuItem = storyItem('Components/Nav', nciNav);
 
 /** Export the sidebar Menu Item */
 export default StoryMenuItem;
+import { Route } from "@/nci/app/interfaces/";
 
-const Template: Story<Nav> = (args: Nav) => ({
+const Template: Story<Nav> = (args: any) => ({
   components: { nciNav },
-  props: generateProps(args), /* dont need injectObject here? */
+  props: generateProps(args),
   template: `<nci-nav v-bind="$props"/>`
 });
 
+let routes: Route[] = []
 
-/* Construct the routes object from the config.pages */
-
-const routes = [
-  {
-    path: "https://www.nuxt.org",
-    name: "Home"
-  },
-  {
-    path: "https://www.nuxt.org",
-    name: "About"
-  }
-]
+for (const key in config.pages) {
+  routes.push({ path: "/" + key, component: {}, name: key })
+}
 
 const data = {
   styles: "nav",
   childStyles: props.styles,
   routes: routes,
-  currentRoute: "/home"
+  currentRoute: "home",
+  selected: props.selected
 }
 
 /** Bind and export the Story */
-export const nav: Story<Nav> = Template.bind({});
+export const nav: Story<any> = Template.bind({});
 nav.args = data
 

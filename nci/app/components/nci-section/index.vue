@@ -45,13 +45,11 @@ const nciSection = defineComponent({
     const components = (components: Components) => {
       let componentArray = [];
       for (const key in components) {
-        if (key !== "group") {
-          componentArray.push(
-            createComponent(components[key] as Image | Title | Button)
-          );
-        } else {
-          componentArray.push(createGroup(components[key] as Group));
-        }
+        key !== "group"
+          ? componentArray.push(
+              createComponent(components[key] as Image | Title | Button)
+            )
+          : componentArray.push(createGroup(components[key] as Group));
       }
       return h("section", { class: props.styles }, [componentArray]);
     };
