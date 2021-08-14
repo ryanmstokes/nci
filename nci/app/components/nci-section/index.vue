@@ -3,7 +3,7 @@
 import { defineComponent, PropType, h } from "@nuxtjs/composition-api";
 
 /** Import typescript types and interfaces */
-import { Components, Group, Image, Title, Button } from "@/nci/app/interfaces";
+import { Components, Group, CoreComponentType } from "@/nci/app/interfaces";
 
 /** NCI-SECTION COMPONENT */
 /**
@@ -27,20 +27,6 @@ const nciSection = defineComponent({
     },
   },
   setup(props) {
-    const createGroup = (group: Group) => {
-      let groupComponents = [];
-      for (const key in group.components) {
-        groupComponents.push(
-          h("nci-component", {
-            props: {
-              component: group.components[key] as Image | Title | Button,
-            },
-          })
-        );
-      }
-      return h("div", { class: group.styles }, [groupComponents]);
-    };
-
     const components = (components: Components) => {
       let componentArray = [];
       for (const key in components) {
@@ -48,11 +34,13 @@ const nciSection = defineComponent({
           ? componentArray.push(
               h("nci-component", {
                 props: {
-                  component: components[key] as Image | Title | Button,
+                  component: components[key] as CoreComponentType,
                 },
               })
             )
-          : componentArray.push(createGroup(components[key] as Group));
+          : componentArray.push(
+              h("nci-group", { props: { group: components[key] as Group } })
+            );
       }
       return h("section", { class: props.styles }, [componentArray]);
     };

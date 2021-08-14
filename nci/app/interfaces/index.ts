@@ -145,10 +145,13 @@ interface Nav {
   styles: string
 }
 
-interface Components {
-  [name: string]: Title | Image | Button | Group | Nav
-}
+type CoreComponentType = Title | Image | Button
 
+type ComponentType = CoreComponentType | Group | Nav
+
+interface Components {
+  [name: string]: ComponentType
+}
 
 /**
  * Section Interface
@@ -278,6 +281,8 @@ export {
   Pages,
   Page,
   Group,
+  CoreComponentType,
+  ComponentType,
   Components,
   Image,
   Title,

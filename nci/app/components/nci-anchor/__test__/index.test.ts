@@ -13,7 +13,7 @@ describe('nci-anchor component', () => {
 
     let wrapper = mount(nciAnchor, {
       propsData: {
-        type: "title",
+        type: "anchor",
         title: "Contact Us",
         href: "https://www.nuxt.org",
         size: "md",
