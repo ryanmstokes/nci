@@ -37,7 +37,7 @@
     "jest": "^27.0.6",
     "postcss": "^8.3.5",
     "prettier": "^2.2.1",
-    "tailwindcss": "^2.2.4",
+    "tailwindcss": "^2.2.14",
     "tailwindcss-fluid": "^0.2.0",
     "ts-jest": "^27.0.3",
     "ts-node": "^10.1.0",
