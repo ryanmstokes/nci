@@ -18,7 +18,7 @@
     "core-js": "^3",
     "install": "^0.13.0",
     "jest-transform-stub": "^2.0.0",
-    "npm": "^7.14.0",
+    "npm": "^7.24.0",
     "nuxt": "^2.15.3",
     "nuxt-typed-vuex": "^0.2.0",
     "vuex-composition-helpers": "^1.0.23"
