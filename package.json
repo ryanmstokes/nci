@@ -40,7 +40,7 @@
     "tailwindcss": "^2.2.4",
     "tailwindcss-fluid": "^0.2.0",
     "ts-jest": "^27.0.3",
-    "ts-node": "^10.1.0",
+    "ts-node": "^10.4.0",
     "vue-jest": "^3.0.4"
   },
   "jest": {
