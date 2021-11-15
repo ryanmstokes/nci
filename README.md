@@ -122,7 +122,6 @@ Open the project in your favourite editor and you will see a common directory st
      **/interfaces**
      Common interfaces for system objects
 
-  4
 
 - **/components**
   Includes core NCI components (Page, Section, Image, Title, Anchor etc). You may define further custom components for your project in the nuxt root components directory just like you would in a normal Nuxt project (*[more details]() regarding integrating custom compoonoents with NCI). 
