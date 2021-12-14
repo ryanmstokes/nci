@@ -9,7 +9,9 @@ const ConfigFile = {
     size: "sm",
     color: "nav",
     selected: "primary",
-    styles: ""
+    styles: "",
+    image: "logo.svg",
+    imageSize: "sm"
   },
   pages: {
     /** Page */

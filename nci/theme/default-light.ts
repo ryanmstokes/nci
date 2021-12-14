@@ -82,10 +82,10 @@ const Theme = {
       xl4: "text-xl4 py-9 px-14 my-11 mx-8",
     },
     color: {
-      primary: "bg-transparent uppercase rounded border border-primary text-primary hover:bg-gray-300 hover:border-transparent hover:text-white",
+      primary: "bg-transparent uppercase rounded border border-primary hover:bg-gray-300 hover:border-transparent hover:text-white",
       secondary: "bg-transparent uppercase rounded text-green-700 border border-green-500 hover:bg-green-500 hover:border-transparent hover:text-white",
       tertiary: "bg-transparent uppercase rounded text-red-700 border border-red-500 hover:bg-red-500 hover:border-transparent hover:text-white",
-      nav: "text-primary border-b border-double border-transparent hover:border-current cursor-pointer select-none"
+      nav: "border-b border-double border-transparent hover:border-current cursor-pointer select-none"
     },
     selected: {
       primary: "border-0 border-b border-current border-solid",

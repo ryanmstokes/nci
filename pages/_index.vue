@@ -42,6 +42,7 @@ export default defineComponent({
         childStyles: typedStore.config.nav.styles,
         currentRoute: route,
         selected: typedStore.config.nav.selected,
+        image: typedStore.config.nav.image,
       };
     });
 

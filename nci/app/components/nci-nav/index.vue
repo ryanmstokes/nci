@@ -1,6 +1,11 @@
 <script lang="ts">
 /** Import utilities from Vue3 Composition API */
-import { defineComponent, PropType, h } from "@nuxtjs/composition-api";
+import {
+  defineComponent,
+  PropType,
+  h,
+  computed,
+} from "@nuxtjs/composition-api";
 
 import { Route, ButtonCompiled } from "@/nci/app/interfaces/";
 
@@ -16,6 +21,10 @@ const nciNav = defineComponent({
   name: "nci-nav",
   inheritAttrs: false,
   props: {
+    image: {
+      type: String as PropType<string>,
+      required: false,
+    },
     styles: {
       type: String as PropType<string>,
       required: true,
@@ -39,6 +48,8 @@ const nciNav = defineComponent({
     },
   },
   setup(props) {
+    const imageSrc = computed((): string => require("~/assets/" + props.image));
+
     const createComponent = (component: ButtonCompiled) => {
       return h("nci-anchor", {
         props: { ...component },
@@ -64,6 +75,7 @@ const nciNav = defineComponent({
           )
         : null;
     });
+    navComponentArray.push(h("img", { attrs: { src: imageSrc.value } }));
 
     return () =>
       h(
