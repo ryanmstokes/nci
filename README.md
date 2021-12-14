@@ -122,7 +122,6 @@ Open the project in your favourite editor and you will see a common directory st
      **/interfaces**
      Common interfaces for system objects
 
-  4
 
 - **/components**
   Includes core NCI components (Page, Section, Image, Title, Anchor etc). You may define further custom components for your project in the nuxt root components directory just like you would in a normal Nuxt project (*[more details]() regarding integrating custom compoonoents with NCI). 
@@ -208,7 +207,8 @@ If you take a look into the html of the web page you will see that the config ge
 ```
 <main class="page">
     <section class="m-auto flex flex-col justify-center items-center text-center sm:w-5/6 md:w-2/3 lg:w-1/2 section">
-    		<h1 class="text-black-500 text-xl3 my-2.5 title">Page 1</h1>   	   </section>
+    	<h1 class="text-black-500 text-xl3 my-2.5 title">Page 1</h1>   	   
+    </section>
 </main>
 ```
 
