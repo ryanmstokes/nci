@@ -13,7 +13,7 @@
   "dependencies": {
     "@apollo/client": "^3.4.10",
     "@nuxt/typescript-runtime": "^2.1.0",
-    "@nuxtjs/composition-api": "^0.24.6",
+    "@nuxtjs/composition-api": "^0.31.0",
     "@storybook/addon-knobs": "^6.2.9",
     "@types/jest": "^26.0.22",
     "core-js": "^3",
